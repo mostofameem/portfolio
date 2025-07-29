@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects & Tech Stack - Mostofa Meem</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Improved text colors for better readability */
+        .project-title {
+            color: #ffffff !important;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: #e2e8f0 !important;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .project-card p {
+            color: #e2e8f0 !important;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .project-card p strong {
+            color: #ffffff !important;
+            font-weight: 700;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #00d4ff !important;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Fira Code', monospace;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #12d8fa !important;
+            transform: translateX(4px);
+        }
+
+        /* Enhanced Key Features styling */
+        .key-features {
+            margin: 1.5rem 0;
+        }
+
+        .key-features strong {
+            color: #00d4ff !important;
+            font-size: 0.95rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .key-features strong::before {
+            content: "🔑";
+            font-size: 1rem;
+        }
+
+        .feature-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(18, 216, 250, 0.1));
+            color: #00d4ff;
+            padding: 0.4rem 0.8rem;
+            margin: 0.2rem 0.3rem 0.2rem 0;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .feature-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(18, 216, 250, 0.15));
+        }
+
+        .feature-tag:hover::before {
+            left: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="problemsolver.html" class="nav-link">Problem Solver</a>
+                <a href="projects.html" class="nav-link">Projects & Tech Stack</a>
+                <a href="resume.html" class="nav-link">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="section" style="border-bottom: none;">
+        <div class="container">
+            <h1>My Projects</h1>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 class="project-title">Foodi</h3>
+                    <p class="project-description">
+                        Foodi is a food delivery platform that allows users to order food from their favorite restaurants. 
+                        It is a microservices-based backend that handles user authentication, product catalog, inventory management, and payment processing. 
+                    </p>
+                    <div class="project-stack">
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#00ADD8">
+                                <path d="M1.811 10.231c-.047 0-.058-.023-.035-.059l.246-.315c.023-.035.081-.058.128-.058h4.172c.046 0 .058.035.035.07l-.199.303c-.023.036-.081.07-.117.07l-4.23-.011zM.047 11.306c-.047 0-.059-.023-.035-.058l.245-.316c.023-.035.082-.058.129-.058h5.516c.047 0 .07.035.058.07l-.093.28c-.012.047-.058.07-.105.07l-5.715-.012zM4.615 12.33c-.058 0-.07-.035-.058-.08l.128-.303c.023-.047.082-.082.14-.082h5.557c.058 0 .093.035.07.093l-.151.28c-.023.058-.093.093-.151.093l-5.535-.001zM9.5 13.307c-.058 0-.082-.035-.058-.082l.093-.28c.023-.058.082-.093.151-.093h3.616c.070 0 .105.035.093.093l-.07.28c-.023.047-.070.082-.14.082H9.5z"/>
+                            </svg>
+                            Go
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#DC382D">
+                                <path d="M10.5 2.661l.54.997-1.797.202L8.052 2.04l1.821 1.037-1.037 1.821L7.035 3.702l1.202-1.797L10.5 2.661zm4.747.968L15.45 5.46l-1.821-1.037 1.037-1.821 1.821 1.037-.54.997zM8.052 21.96l1.821-1.037 1.037 1.821-1.821 1.037L8.052 21.96zm6.397-19.299l.54.997-1.797.202L12 2.04l1.821 1.037-1.037 1.821L11.987 3.702l1.202-1.797.26-.244zM1.5 12l3.748-6.5L1.5 12 5.248 5.5 1.5 12zm21 0l-3.748 6.5L21 12l-3.748-6.5L21 12z"/>
+                            </svg>
+                            Redis
+                        </span>
+
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#336791">
+                                <path d="M23.111 7.069c0-.353-.231-.677-.572-.798l-9.983-3.571c-.297-.106-.617-.106-.914 0L1.659 6.271c-.341.121-.572.445-.572.798v9.862c0 .353.231.677.572.798l9.983 3.571c.297.106.617.106.914 0l9.983-3.571c.341-.121.572-.445.572-.798V7.069zm-11.111 2.931c-2.762 0-5-2.238-5-5s2.238-5 5-5 5 2.238 5 5-2.238 5-5 5z"/>
+                            </svg>
+                            PostgreSQL
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2496ED">
+                                <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.186m8.778 2.219h2.118a.186.186 0 00.186-.185V5.787a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.186"/>
+                            </svg>
+                            Docker
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#FF6600">
+                                <path d="M21.337 16.056c-.256-.774-.832-1.152-1.669-1.152-.64 0-1.17.256-1.536.736-.366.48-.576 1.152-.576 1.984 0 .832.21 1.504.576 1.984.366.48.896.736 1.536.736.837 0 1.413-.378 1.669-1.152h-1.109c-.154.224-.378.352-.64.352-.256 0-.469-.128-.608-.384-.139-.256-.208-.608-.208-1.056 0-.448.069-.8.208-1.056.139-.256.352-.384.608-.384.262 0 .486.128.64.352h1.109zm-8.544 0c-.256-.774-.832-1.152-1.669-1.152-.64 0-1.17.256-1.536.736-.366.48-.576 1.152-.576 1.984 0 .832.21 1.504.576 1.984.366.48.896.736 1.536.736.837 0 1.413-.378 1.669-1.152h-1.109c-.154.224-.378.352-.64.352-.256 0-.469-.128-.608-.384-.139-.256-.208-.608-.208-1.056 0-.448.069-.8.208-1.056.139-.256.352-.384.608-.384.262 0 .486.128.64.352h1.109z"/>
+                            </svg>
+                            RabbitMQ
+                        </span>
+                    </div>
+                    <p class="key-features">
+                        <strong>Key Features:</strong><br>
+                        <span class="feature-tag">Authentication middleware</span>
+                        <span class="feature-tag">Database optimization</span>
+                        <span class="feature-tag">Payment integration</span>
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">TN-Map</h3>
+                    <p class="project-description">
+                        Tn Map is a map application that allows users to view and search for places of interest in Bangladesh. 
+                        It is a web application that remove the google map api and use the own map api.
+                    </p>
+                    <div class="project-stack">
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#00ADD8">
+                                <path d="M1.811 10.231c-.047 0-.058-.023-.035-.059l.246-.315c.023-.035.081-.058.128-.058h4.172c.046 0 .058.035.035.07l-.199.303c-.023.036-.081.07-.117.07l-4.23-.011zM.047 11.306c-.047 0-.059-.023-.035-.058l.245-.316c.023-.035.082-.058.129-.058h5.516c.047 0 .07.035.058.07l-.093.28c-.012.047-.058.07-.105.07l-5.715-.012zM4.615 12.33c-.058 0-.07-.035-.058-.08l.128-.303c.023-.047.082-.082.14-.082h5.557c.058 0 .093.035.07.093l-.151.28c-.023.058-.093.093-.151.093l-5.535-.001zM9.5 13.307c-.058 0-.082-.035-.058-.082l.093-.28c.023-.058.082-.093.151-.093h3.616c.070 0 .105.035.093.093l-.07.28c-.023.047-.070.082-.14.082H9.5z"/>
+                            </svg>
+                            Go
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#336791">
+                                <path d="M23.111 7.069c0-.353-.231-.677-.572-.798l-9.983-3.571c-.297-.106-.617-.106-.914 0L1.659 6.271c-.341.121-.572.445-.572.798v9.862c0 .353.231.677.572.798l9.983 3.571c.297.106.617.106.914 0l9.983-3.571c.341-.121.572-.445.572-.798V7.069zm-11.111 2.931c-2.762 0-5-2.238-5-5s2.238-5 5-5 5 2.238 5 5-2.238 5-5 5z"/>
+                            </svg>
+                            PostgreSQL
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2496ED">
+                                <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.186"/>
+                            </svg>
+                            Docker
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#FF6600">
+                                <path d="M21.337 16.056c-.256-.774-.832-1.152-1.669-1.152-.64 0-1.17.256-1.536.736-.366.48-.576 1.152-.576 1.984 0 .832.21 1.504.576 1.984.366.48.896.736 1.536.736.837 0 1.413-.378 1.669-1.152h-1.109c-.154.224-.378.352-.64.352-.256 0-.469-.128-.608-.384-.139-.256-.208-.608-.208-1.056 0-.448.069-.8.208-1.056.139-.256.352-.384.608-.384.262 0 .486.128.64.352h1.109z"/>
+                            </svg>
+                            RabbitMQ
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#FF9900">
+                                <path d="M18.724 10.331c.11-1.95-.838-3.026-2.264-3.735.248-1.92-.045-3.435-1.24-4.301C13.975 1.471 12.364 1.35 10.9 2.133 9.487 1.35 7.875 1.471 6.63 2.295c-1.195.866-1.488 2.38-1.24 4.301-1.426.709-2.374 1.785-2.264 3.735-.11 1.95.838 3.026 2.264 3.735-.248 1.92.045 3.435 1.24 4.301 1.245.824 2.856.945 4.32.162 1.413.783 3.025.662 4.27-.162 1.195-.866 1.488-2.38 1.24-4.301 1.426-.709 2.374-1.785 2.264-3.735z"/>
+                            </svg>
+                            AWS
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#7EBC6F">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1.314 6.514h2.628v4.929H8.686V6.514zm0 6.171h2.628v4.929H8.686v-4.929z"/>
+                            </svg>
+                            OpenStreetMap
+                        </span>
+                    </div>
+                    <p class="key-features">
+                        <strong>Key Features:</strong><br>
+                        <span class="feature-tag">Distance calculation</span>
+                        <span class="feature-tag">Route planning</span>
+                        <span class="feature-tag">Place search</span>
+                        <span class="feature-tag">Map rendering</span>
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Event Management System</h3>
+                    <p class="project-description">
+                        Event Management System is a system that allows users to manage events. 
+                        It is a web application that allows users to create, edit, and delete events.
+                    </p>
+                    <div class="project-stack">
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#00ADD8">
+                                <path d="M1.811 10.231c-.047 0-.058-.023-.035-.059l.246-.315c.023-.035.081-.058.128-.058h4.172c.046 0 .058.035.035.07l-.199.303c-.023.036-.081.07-.117.07l-4.23-.011zM.047 11.306c-.047 0-.059-.023-.035-.058l.245-.316c.023-.035.082-.058.129-.058h5.516c.047 0 .07.035.058.07l-.093.28c-.012.047-.058.07-.105.07l-5.715-.012z"/>
+                            </svg>
+                            Go
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#4479A1">
+                                <path d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.151zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H.165c.055-5.297.08-6.24.17-8.825h1.004l1.36 4.064c.438 1.316.675 2.117.766 2.404h.01c.12-.336.354-1.203.82-2.566l1.204-3.902h.996c.085 2.578.124 3.508.166 8.825"/>
+                            </svg>
+                            MySQL
+                        </span>
+
+                    </div>
+                    <p class="key-features">
+                        <strong>Key Features:</strong><br>
+                        <span class="feature-tag">Auto Event Creation</span>
+                        <span class="feature-tag">Event Management</span>
+                        <span class="feature-tag">Role Based Access Control</span>
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Worker Scheduler</h3>
+                    <p class="project-description">
+                        This is a worker scheduler that allows users to schedule workers to work on a specific task.
+                        It is a web application that allows users to create, edit, and delete workers.
+                    </p>
+                    <div class="project-stack">
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#3776AB">
+                                <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.2v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09-.33.22z"/>
+                            </svg>
+                            Python
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#336791">
+                                <path d="M23.111 7.069c0-.353-.231-.677-.572-.798l-9.983-3.571c-.297-.106-.617-.106-.914 0L1.659 6.271c-.341.121-.572.445-.572.798v9.862c0 .353.231.677.572.798l9.983 3.571c.297.106.617.106.914 0l9.983-3.571c.341-.121.572-.445.572-.798V7.069zm-11.111 2.931c-2.762 0-5-2.238-5-5s2.238-5 5-5 5 2.238 5 5-2.238 5-5 5z"/>
+                            </svg>
+                            PostgreSQL
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#FF9900">
+                                <path d="M18.724 10.331c.11-1.95-.838-3.026-2.264-3.735.248-1.92-.045-3.435-1.24-4.301C13.975 1.471 12.364 1.35 10.9 2.133 9.487 1.35 7.875 1.471 6.63 2.295c-1.195.866-1.488 2.38-1.24 4.301-1.426.709-2.374 1.785-2.264 3.735-.11 1.95.838 3.026 2.264 3.735-.248 1.92.045 3.435 1.24 4.301 1.245.824 2.856.945 4.32.162 1.413.783 3.025.662 4.27-.162 1.195-.866 1.488-2.38 1.24-4.301 1.426-.709 2.374-1.785 2.264-3.735z"/>
+                            </svg>
+                            Render
+                        </span>
+                    </div>
+                    <p class="key-features">
+                        <strong>Key Features:</strong><br>
+                        <span class="feature-tag">Manage Worker</span>
+                        <span class="feature-tag">Schedule Worker</span>
+                        <span class="feature-tag">Worker Management</span>
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Trip To BD (personal project)</h3>
+                    <p class="project-description">
+                        This is a personal project that allows users to plan their trip to Bangladesh.
+                        It is a web application that allows users to create, edit, and delete trips plans.
+                        Also users can add places to their trip plans and can see the details of the places.
+                    </p>
+                    <div class="project-stack">
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#00ADD8">
+                                <path d="M1.811 10.231c-.047 0-.058-.023-.035-.059l.246-.315c.023-.035.081-.058.128-.058h4.172c.046 0 .058.035.035.07l-.199.303c-.023.036-.081.07-.117.07l-4.23-.011zM.047 11.306c-.047 0-.059-.023-.035-.058l.245-.316c.023-.035.082-.058.129-.058h5.516c.047 0 .07.035.058.07l-.093.28c-.012.047-.058.07-.105.07l-5.715-.012z"/>
+                            </svg>
+                            Go
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#336791">
+                                <path d="M23.111 7.069c0-.353-.231-.677-.572-.798l-9.983-3.571c-.297-.106-.617-.106-.914 0L1.659 6.271c-.341.121-.572.445-.572.798v9.862c0 .353.231.677.572.798l9.983 3.571c.297.106.617.106.914 0l9.983-3.571c.341-.121.572-.445.572-.798V7.069z"/>
+                            </svg>
+                            PostgreSQL
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#47A248">
+                                <path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 003.639-8.464c.01-.814-.103-1.662-.197-2.218z"/>
+                            </svg>
+                            MongoDB
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#DC382D">
+                                <path d="M10.5 2.661l.54.997-1.797.202L8.052 2.04l1.821 1.037-1.037 1.821L7.035 3.702l1.202-1.797L10.5 2.661zm4.747.968L15.45 5.46l-1.821-1.037 1.037-1.821 1.821 1.037-.54.997z"/>
+                            </svg>
+                            Redis
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#2496ED">
+                                <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185"/>
+                            </svg>
+                            Docker
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#FF6600">
+                                <path d="M21.337 16.056c-.256-.774-.832-1.152-1.669-1.152-.64 0-1.17.256-1.536.736-.366.48-.576 1.152-.576 1.984 0 .832.21 1.504.576 1.984.366.48.896.736 1.536.736.837 0 1.413-.378 1.669-1.152"/>
+                            </svg>
+                            RabbitMQ
+                        </span>
+                        <span class="stack-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#5C85D6">
+                                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                            </svg>
+                            gRPC
+                        </span>
+                    </div>
+                    <p class="key-features">
+                        <strong>Key Features:</strong><br>
+                        <span class="feature-tag">Trip Management</span>
+                        <span class="feature-tag">Place Management</span>
+                        <span class="feature-tag">User Management</span>
+                    </p>
+                    <a href="#" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Tech Stack Section -->
+        <section class="section" style="padding: 2rem 0; border-bottom: 1px solid rgba(51, 51, 51, 0.3);">
+            <div class="container">
+                <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-primary);">Tech Stack</h3>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; max-width: 800px; margin: 0 auto;">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Go</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">GraphQL</span>
+                    <span class="tech-tag">REST APIs</span>
+                    <span class="tech-tag">Apache Kafka</span>
+                </div>
+            </div>
+        </section>
+    
+</body>
+</html> 
