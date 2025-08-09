@@ -8,21 +8,21 @@
     <style>
         /* Improved text colors for better readability */
         .project-title {
-            color: #ffffff !important;
+            color: #000000 !important;
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
 
         .project-description {
-            color: #e2e8f0 !important;
+            color: #000000 !important;
             margin-bottom: 1.5rem;
             line-height: 1.6;
             font-weight: 500;
         }
 
         .project-card p {
-            color: #e2e8f0 !important;
+            color: #000000 !important;
             font-weight: 500;
             line-height: 1.6;
         }
@@ -36,7 +36,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: #00d4ff !important;
+            color: #000000 !important;
             text-decoration: none;
             font-weight: 600;
             font-family: 'Fira Code', monospace;
@@ -44,7 +44,7 @@
         }
 
         .project-link:hover {
-            color: #12d8fa !important;
+            color: #000000 !important;
             transform: translateX(4px);
         }
 
@@ -54,7 +54,7 @@
         }
 
         .key-features strong {
-            color: #00d4ff !important;
+            color: #000000 !important;
             font-size: 0.95rem;
             font-weight: 700;
             display: inline-flex;
@@ -70,14 +70,14 @@
 
         .feature-tag {
             display: inline-block;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(18, 216, 250, 0.1));
-            color: #00d4ff;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(253, 253, 253, 0.1));
+            color: #000000;
             padding: 0.4rem 0.8rem;
             margin: 0.2rem 0.3rem 0.2rem 0;
             border-radius: 16px;
             font-size: 0.85rem;
             font-weight: 600;
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -120,7 +120,7 @@
     </nav>
 
     <!-- Projects Section -->
-    <section class="section" style="border-bottom: none;">
+    <section class="section">
         <div class="container">
             <h1>My Projects</h1>
 
@@ -350,24 +350,22 @@
             </div>
         </div>
     </section>
-
         <!-- Tech Stack Section -->
         <section class="section" style="padding: 2rem 0; border-bottom: 1px solid rgba(51, 51, 51, 0.3);">
             <div class="container">
                 <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-primary);">Tech Stack</h3>
                 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; max-width: 800px; margin: 0 auto;">
+                    <span class="tech-tag">Golang</span>
                     <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Node.js</span>
                     <span class="tech-tag">Java</span>
-                    <span class="tech-tag">Go</span>
                     <span class="tech-tag">PostgreSQL</span>
                     <span class="tech-tag">MongoDB</span>
                     <span class="tech-tag">Redis</span>
                     <span class="tech-tag">Docker</span>
                     <span class="tech-tag">AWS</span>
-                    <span class="tech-tag">GraphQL</span>
                     <span class="tech-tag">REST APIs</span>
-                    <span class="tech-tag">Apache Kafka</span>
+                    <span class="tech-tag">RabbitMq</span>
+                    <span class="tech-tag">gRPC</span>
                 </div>
             </div>
         </section>
