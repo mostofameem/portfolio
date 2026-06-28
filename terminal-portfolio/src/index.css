@@ -1,0 +1,250 @@
+@import "tailwindcss";
+
+/* ===========================================================================
+   THEME TOKENS
+   The classic phosphor green terminal, with an amber phosphor alternative.
+   Background stays black in both; only the foreground phosphor changes.
+   Switching is driven by a `data-theme` attribute on <html> (see useTheme).
+   =========================================================================== */
+:root {
+  --term-bg: #000000;
+  --term-fg: #00ff00; /* phosphor green        */
+  --term-fg-dim: #0a8a0a; /* dimmed green          */
+  --term-fg-strong: #6bff6b; /* highlight             */
+  --term-glow: rgba(0, 255, 0, 0.55);
+  --term-glow-soft: rgba(0, 255, 0, 0.35);
+  --scanline-alpha: 0.25;
+}
+
+[data-theme="amber"] {
+  --term-fg: #ffb000; /* phosphor amber        */
+  --term-fg-dim: #a06f00;
+  --term-fg-strong: #ffdf8a;
+  --term-glow: rgba(255, 176, 0, 0.5);
+  --term-glow-soft: rgba(255, 176, 0, 0.3);
+}
+
+/* ===========================================================================
+   BASE
+   =========================================================================== */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  background: var(--term-bg);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--term-bg);
+  color: var(--term-fg);
+  font-family: "JetBrains Mono", "IBM Plex Mono", "Courier New", ui-monospace,
+    monospace;
+  font-size: 15px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* A gentle phosphor glow on all terminal text. */
+  text-shadow: 0 0 1px var(--term-glow-soft), 0 0 6px var(--term-glow-soft);
+  overflow: hidden;
+}
+
+::selection {
+  background: var(--term-fg);
+  color: var(--term-bg);
+  text-shadow: none;
+}
+
+a {
+  color: var(--term-fg-strong);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  background: var(--term-fg);
+  color: var(--term-bg);
+  text-shadow: none;
+}
+
+/* Retro scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--term-fg-dim);
+  border: 2px solid #050505;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--term-fg);
+}
+
+/* ===========================================================================
+   CRT EFFECTS
+   Two fixed full-screen layers (scanlines + vignette/flicker) sit above the
+   page content via pointer-events: none so they never block interaction.
+   =========================================================================== */
+.crt-scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, var(--scanline-alpha)) 3px,
+    rgba(0, 0, 0, var(--scanline-alpha)) 4px
+  );
+  mix-blend-mode: multiply;
+}
+
+/* Vignette + faint screen curvature feel. */
+.crt-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 41;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0) 55%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+/* Subtle whole-screen flicker. */
+.crt-flicker {
+  position: fixed;
+  inset: 0;
+  z-index: 42;
+  pointer-events: none;
+  background: var(--term-fg);
+  opacity: 0;
+  mix-blend-mode: overlay;
+  animation: crt-flicker 5s infinite steps(60);
+}
+
+@keyframes crt-flicker {
+  0%,
+  97%,
+  100% {
+    opacity: 0;
+  }
+  97.5% {
+    opacity: 0.04;
+  }
+  98% {
+    opacity: 0.02;
+  }
+  98.5% {
+    opacity: 0.05;
+  }
+}
+
+/* Honor reduced-motion: kill flicker/scanline animations. */
+@media (prefers-reduced-motion: reduce) {
+  .crt-flicker {
+    animation: none;
+  }
+  .crt-scanlines {
+    animation: none;
+  }
+}
+
+/* ===========================================================================
+   BLINKING CURSOR
+   =========================================================================== */
+.cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.05em;
+  background: var(--term-fg);
+  box-shadow: 0 0 8px var(--term-glow);
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  transform: translateY(2px);
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+    opacity: 0.8;
+  }
+}
+
+/* ===========================================================================
+   TERMINAL TEXT HELPERS
+   =========================================================================== */
+.term-text {
+  color: var(--term-fg);
+}
+.term-dim {
+  color: var(--term-fg-dim);
+}
+.term-strong {
+  color: var(--term-fg-strong);
+}
+.term-bold {
+  font-weight: 700;
+}
+
+/* whitespace preserved for ascii art / aligned output */
+.pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.pre-line {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ===========================================================================
+   RESPONSIVE FONT
+   =========================================================================== */
+@media (max-width: 640px) {
+  body {
+    font-size: 13px;
+  }
+}
+
+/* Boot flash — a quick brightness pulse when the OS "boots". */
+.boot-flash {
+  animation: boot-flash 0.9s ease-out;
+}
+@keyframes boot-flash {
+  0% {
+    opacity: 0;
+    filter: brightness(3);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+}

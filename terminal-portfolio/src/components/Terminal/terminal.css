@@ -1,0 +1,157 @@
+/* ===========================================================================
+   TERMINAL SHELL LAYOUT
+   =========================================================================== */
+.terminal {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(0.75rem, 2vw, 1.75rem);
+}
+
+.terminal-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 4px;
+}
+
+.entry {
+  margin-top: 0.1em;
+}
+.entry-line,
+.active-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.prompt {
+  color: var(--term-fg-strong);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.terminal-output {
+  margin: 0.15em 0 0.5em;
+}
+.terminal-output .pre {
+  margin: 0;
+}
+.raw-segment {
+  margin: 0.1em 0;
+}
+
+/* ===========================================================================
+   INPUT LINE (ghost + transparent real input + block cursor)
+   =========================================================================== */
+.input-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  cursor: text;
+}
+
+.input-field {
+  position: relative;
+  display: inline-block;
+  flex: 1 1 auto;
+  min-width: 1ch;
+}
+
+.ghost {
+  display: inline;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--term-fg);
+}
+
+.real-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: transparent;
+  caret-color: transparent;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  resize: none;
+}
+.real-input:disabled {
+  opacity: 0;
+}
+.real-input::selection {
+  background: var(--term-glow-soft);
+}
+
+/* Reverse-video block cursor. The character under the caret shows in inverted
+   colors and the whole block blinks. */
+.block-cursor {
+  display: inline-block;
+  background: var(--term-fg);
+  color: var(--term-bg);
+  text-shadow: none;
+  min-width: 0.62em;
+  box-shadow: 0 0 8px var(--term-glow);
+  animation: blink 1s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .block-cursor {
+    animation: none;
+  }
+}
+
+/* ===========================================================================
+   FOOTER
+   =========================================================================== */
+.terminal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.6rem;
+  margin-top: 0.4rem;
+  border-top: 1px dashed var(--term-fg-dim);
+  font-size: 0.82em;
+}
+.visitor-counter {
+  white-space: nowrap;
+}
+.footer-hint {
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+/* ===========================================================================
+   BOOT SEQUENCE OVERLAY
+   =========================================================================== */
+.boot-sequence {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: var(--term-bg);
+  overflow: auto;
+  font-size: clamp(12px, 2.4vw, 15px);
+}
+.boot-skip {
+  margin-top: 1.5rem;
+  font-size: 0.85em;
+}
+
+/* ascii art banner shouldn't wrap mid-glyph */
+.pre {
+  font-variant-ligatures: none;
+}
