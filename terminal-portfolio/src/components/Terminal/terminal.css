@@ -85,6 +85,10 @@
   font: inherit;
   line-height: inherit;
   letter-spacing: inherit;
+  /* The input is transparent + overlaid on the ghost, so this never shows.
+     But iOS Safari auto-zooms the page when an input < 16px is focused — pin
+     it to 16px on mobile so focusing the field can't bork the layout. */
+  font-size: max(16px, 1em);
   resize: none;
 }
 .real-input:disabled {

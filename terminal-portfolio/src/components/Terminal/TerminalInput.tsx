@@ -124,10 +124,14 @@ export const TerminalInput = ({
   return (
     <div
       className="input-row"
-      onMouseDown={(e) => {
-        // Focus the field, but don't fight text selection clicks.
+      onPointerDown={(e) => {
+        // Allow text-selection clicks to behave normally.
         if (window.getSelection()?.toString()) return;
-        e.preventDefault();
+        // Cancelling the default on touch/pen blocks the mobile virtual
+        // keyboard (iOS won't open it when the pointer event is prevented),
+        // so only intercept mouse pointers to focus cleanly without starting a
+        // drag selection.
+        if (e.pointerType === "mouse") e.preventDefault();
         focus();
       }}
     >

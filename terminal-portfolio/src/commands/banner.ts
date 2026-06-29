@@ -60,6 +60,17 @@ export const WELCOME_LINES: string[] = [
   "Type 'help <command>' for usage. Try: whoami, projects, neofetch",
 ];
 
+/** Compact banner for narrow (mobile) screens — drops the ~72-char block-art
+ *  header so nothing wraps into a scrambled mess on a phone. */
+export const COMPACT_WELCOME_LINES: string[] = [
+  `> ${profile.name}`,
+  `${profile.tagline}`,
+  profile.location,
+  "",
+  "Type 'help' to list available commands.",
+  "Try: whoami, projects, neofetch",
+];
+
 /** Full welcome banner used by the `banner` command. */
 export const welcomeBanner = () => WELCOME_LINES.map((line) => t(line));
 

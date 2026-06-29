@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import "./components/Terminal/terminal.css";
 import { Terminal } from "./components/Terminal/Terminal";
 import { BootSequence } from "./components/Terminal/BootSequence";
@@ -13,7 +13,7 @@ import type {
 } from "./commands/types";
 import type { LogEntry } from "./components/Terminal/types";
 import { profile } from "./data/profile";
-import { WELCOME_LINES } from "./commands/banner";
+import { WELCOME_LINES, COMPACT_WELCOME_LINES } from "./commands/banner";
 
 const PROMPT = `${profile.user}@${profile.host}:~$`;
 
@@ -32,6 +32,21 @@ export default function App() {
   const [entries, setEntries] = useState<LogEntry[]>([]);
   const idRef = useRef(0);
   const nextId = () => ++idRef.current;
+
+  // The big ASCII banner (~72 chars) wraps into garbage on phones, so swap in a
+  // compact header on narrow screens.
+  const [isMobile, setIsMobile] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(max-width: 640px)").matches,
+  );
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 640px)");
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+  const bannerLines = isMobile ? COMPACT_WELCOME_LINES : WELCOME_LINES;
 
   const ctx: CommandContext = { theme, setTheme, toggleTheme };
 
@@ -101,7 +116,7 @@ export default function App() {
       ) : (
         <Terminal
           prompt={PROMPT}
-          bannerLines={WELCOME_LINES}
+          bannerLines={bannerLines}
           entries={entries}
           suggestions={commandNames}
           onSubmit={handleSubmit}
