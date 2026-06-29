@@ -15,7 +15,7 @@ export const projectsCommand: Command = {
       ),
     ),
     t(""),
-    t("Type 'open <name>' to view a project, e.g.  open triptobd"),
+    t("Type 'open <name>' to view a project, e.g.  open triptobd or open bkash-voucher"),
     t(`Slugs: ${projects.map((p) => p.slug).join(", ")}`),
   ],
 };

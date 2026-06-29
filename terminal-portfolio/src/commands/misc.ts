@@ -6,7 +6,12 @@ import { THEMES } from "../theme";
 export const whoamiCommand: Command = {
   name: "whoami",
   description: "Print the current user.",
-  run: () => [t(profile.user), t(`${profile.name} — ${profile.role}`)],
+  run: () => [
+    t(profile.user),
+    t(`${profile.name} — ${profile.role}`),
+    t(profile.location),
+    t(profile.shortBio),
+  ],
 };
 
 export const dateCommand: Command = {

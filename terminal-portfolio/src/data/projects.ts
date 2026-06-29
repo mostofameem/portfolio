@@ -15,6 +15,25 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "bkash-voucher",
+    name: "bKash Voucher",
+    tagline: "Merchant gift-card issuance and payment fulfillment",
+    description:
+      "A secure voucher platform for bKash merchants to issue, manage, and " +
+      "sell digital gift cards across outlets. The system supports merchant " +
+      "inventory, payment gateway integration, and real-time voucher redemption.",
+    tech: ["Java 21", "Spring Boot", "REST APIs", "MySQL", "Redis", "RabbitMQ", "CI/CD"],
+    features: [
+      "Voucher creation, issuance, and redemption",
+      "Secure bKash payment integration",
+      "Merchant outlet and inventory management",
+      "Asynchronous processing with RabbitMQ",
+      "Redis caching for faster API responses",
+    ],
+    url: "https://github.com/mostofameem",
+    highlight: true,
+  },
+  {
     slug: "foodi",
     name: "Foodi",
     tagline: "Microservices food-delivery backend",

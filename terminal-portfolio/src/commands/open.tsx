@@ -20,7 +20,7 @@ export const openCommand: Command = {
   description: "Open a project's full details.",
   run: (args) => {
     if (!args[0]) {
-      return t("Usage: open <project>.   Try:  open triptobd");
+      return t("Usage: open <project>.   Try:  open triptobd or open bkash-voucher");
     }
     const p = findProject(args[0]);
     if (!p) {
