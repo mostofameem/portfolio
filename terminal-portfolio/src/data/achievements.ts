@@ -17,16 +17,16 @@ export const achievements: Achievement[] = [
     note: "International Collegiate Programming Contest — Regional level",
   },
   {
-    rank: "9th",
-    event: "BREAKING CODE (IUPC) 2022",
-    team: 'Team: "Akash_theke_pora_team"',
-    note: "9th place in a university-level programming contest",
-  },
-  {
     rank: "80th",
     event: "NCPC JU 2023",
     team: 'Team: "Checkmate"',
     note: "National Collegiate Programming Contest",
+  },
+  {
+    rank: "9th",
+    event: "BREAKING CODE (IUPC) 2022",
+    team: 'Team: "Akash_theke_pora_team"',
+    note: "9th place in a university-level programming contest",
   },
   {
     rank: "2998th",

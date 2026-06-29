@@ -13,17 +13,20 @@ export const profile = {
   name: "Mostofa Meem",
   user: "mostofa", // terminal username / prompt label
   host: "portfolio", // terminal hostname
-  role: "Backend Developer",
-  tagline: "Backend Developer | AI-Accelerated Development",
-  location: "Bangladesh",
+  role: "Backend Software Engineer",
+  tagline: "Backend Software Engineer | AI-Accelerated Development",
+  location: "Dhaka, Bangladesh",
   email: "mostofameem@gmail.com",
   bio: [
-    "I'm a backend developer who ships fast by putting AI to work across my",
-    "entire workflow. I help teams and founders build their projects in record",
-    "time — designing, coding, and validating with tools like Cursor, Claude",
-    "Code, and Z.ai (GLM) — while keeping an engineer's eye on scalable APIs",
-    "and microservices, so what I ship is fast to build and built to last.",
-    "When I'm not coding, I'm exploring new models and tooling.",
+    "I'm a Backend Software Engineer with 2.5+ years of experience building",
+    "production-grade, high-performance systems in Go, Java, and Python. My",
+    "focus goes beyond implementing APIs — I enjoy solving complex engineering",
+    "challenges around concurrency, distributed systems, performance",
+    "optimization, and reliability. I leverage modern AI-powered development",
+    "tools like Cursor, Claude Code, and Z.ai (GLM) to help teams and founders",
+    "turn ideas into production-ready software faster, combining AI-assisted",
+    "development with strong engineering principles to ship scalable APIs,",
+    "microservices, and backend systems that are built to perform and evolve.",
   ].join(" "),
   shortBio:
     "Backend developer who ships projects faster with AI (Cursor, Claude Code, Z.ai GLM).",
@@ -59,6 +62,11 @@ export const socials: SocialLink[] = [
     label: "LeetCode",
     handle: "Mostofameem",
     url: "https://leetcode.com/Mostofameem",
+  },
+  {
+    label: "Uva",
+    handle: "Mostofa.Meem",
+    url: "https://uhunt.onlinejudge.org/id/1036760",
   },
 ];
 

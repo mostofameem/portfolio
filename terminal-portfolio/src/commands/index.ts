@@ -6,6 +6,7 @@ import { projectsCommand } from "./projects";
 import { openCommand } from "./open";
 import { experienceCommand } from "./experience";
 import { educationCommand, achievementsCommand } from "./education";
+import { leadershipCommand } from "./leadership";
 import { contactCommand } from "./contact";
 import { neofetchCommand } from "./neofetch";
 import {
@@ -35,6 +36,7 @@ export const commands: Command[] = [
   experienceCommand,
   educationCommand,
   achievementsCommand,
+  leadershipCommand,
   contactCommand,
   resumeCommand,
   neofetchCommand,

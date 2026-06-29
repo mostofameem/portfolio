@@ -44,13 +44,21 @@ export const projects: Project[] = [
   {
     slug: "event-management",
     name: "Event Management System",
-    tagline: "Events with role-based access control",
+    tagline: "Full-stack events platform with role-based access control",
     description:
-      "A system to manage events end-to-end — create, edit and delete events " +
-      "with fine-grained, role-based access control.",
-    tech: ["Go", "MySQL"],
-    features: ["Auto event creation", "Event management", "Role-based access control"],
-    url: "https://github.com/mostofameem",
+      "A full-stack web platform for creating and managing events with " +
+      "role-based access control — covering the event lifecycle, participant " +
+      "tracking with guest counts, and auto-recreation of recurring events.",
+    tech: ["Go", "PostgreSQL", "Redis", "React", "TypeScript", "Docker", "JWT", "OAuth2", "AWS (EC2)", "CI/CD"],
+    features: [
+      "Role-based access control (RBAC)",
+      "Event lifecycle management",
+      "Participant tracking with guest counts",
+      "Hot Events recurring-event scheduler",
+      "Google OAuth 2.0 + JWT authentication",
+      "Docker Compose + CI/CD to AWS EC2",
+    ],
+    url: "https://github.com/mostofameem/identity-rbac",
   },
   {
     slug: "worker-scheduler",

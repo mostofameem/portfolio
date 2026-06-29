@@ -11,10 +11,10 @@ export interface EducationEntry {
 
 export const education: EducationEntry[] = [
   {
-    degree: "M.Sc. in Computer Science",
+    degree: "M.Engg in Computer Science & Engineering",
     institution: "Mawlana Bhashani Science and Technology University",
     period: "2025 – Present",
-    detail: "Advanced Algorithms · Research · System Architecture",
+    detail: "Advanced Algorithms · AI · System Architecture",
   },
   {
     degree: "B.Sc. in Computer Science & Engineering",

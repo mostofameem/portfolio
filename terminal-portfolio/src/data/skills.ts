@@ -9,42 +9,41 @@ export interface SkillCategory {
 
 export const skillCategories: SkillCategory[] = [
   {
-    name: "Backend",
-    items: [
-      "Go (Golang)",
-      "Python",
-      "Java",
-      "Spring Boot",
-      "Node.js / Express",
-      "Django",
-      "Flask",
-      "REST APIs",
-      "gRPC",
-      "RabbitMQ",
-    ],
+    name: "Languages",
+    items: ["Go", "Java", "Python", "SQL", "C/C++"],
+  },
+  {
+    name: "Frameworks",
+    items: ["Spring Boot", "FastAPI", "Gin"],
   },
   {
     name: "Databases",
-    items: ["PostgreSQL", "MongoDB", "MySQL", "Redis"],
+    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
   },
   {
-    name: "Cloud",
-    items: ["AWS", "Render", "OpenStreetMap APIs"],
+    name: "Message Brokers",
+    items: ["RabbitMQ"],
   },
   {
-    name: "DevOps",
-    items: ["Docker", "Kubernetes (basic)", "Git", "CI/CD", "GitLab"],
+    name: "DevOps & Tools",
+    items: ["Git", "GitHub", "GitLab", "AWS", "Docker", "CI/CD"],
   },
   {
-    name: "AI Tooling",
-    items: ["Cursor", "Claude Code", "Z.ai (GLM)", "LLM Applications"],
+    name: "Monitoring",
+    items: ["Grafana", "ElasticSearch (APM)", "Swagger", "Postman"],
   },
   {
-    name: "AI / Algorithms",
+    name: "AI Tools",
+    items: ["Cursor", "Claude Code", "Z.ai (GLM)"],
+  },
+  {
+    name: "Architecture & Practices",
     items: [
-      "LLM Applications",
-      "Data Structures & Algorithms",
-      "Competitive Programming",
+      "OpenStreetMap",
+      "Microservices",
+      "Unit Testing",
+      "Domain-Driven Design",
+      "Clean Architecture",
     ],
   },
 ];
