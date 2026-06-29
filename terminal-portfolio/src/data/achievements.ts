@@ -37,8 +37,8 @@ export const achievements: Achievement[] = [
 ];
 
 export const codingStats: { value: string; label: string }[] = [
-  { value: "2500+", label: "Problems Solved" },
-  { value: "250+", label: "Contests Participated" },
-  { value: "1399", label: "Max Codeforces Rating" },
-  { value: "382", label: "Max LeetCode Streak (days)" },
+  { value: "2500+", label: "Problems Solved." },
+  { value: "250+", label: "Contests Participated." },
+  { value: "1399", label: "Max Codeforces Rating." },
+  { value: "382", label: "Max LeetCode Streak (days)." },
 ];
